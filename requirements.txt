@@ -1,0 +1,6 @@
+playwright
+pydub
+eyed3
+python-dotenv
+requests
+os
