@@ -13,6 +13,8 @@ import os
 from dotenv import load_dotenv
 from playwright.sync_api import sync_playwright
 
+print("Welcome to Spotify Playlist Sequencer!")
+
 # Load environment variables from .env
 load_dotenv()
 
