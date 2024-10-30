@@ -12,7 +12,7 @@ import os
 
 path = os.path.abspath(os.getcwd())
 
-print("Welcome to Spotify Local Files Automator!")
+print("Welcome to Spotify Local Files Automator!\n")
 
 # Prompt user to input song title and artist name and generate SoundCloud query
 title = input("Title: ")
