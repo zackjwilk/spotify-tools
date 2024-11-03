@@ -74,8 +74,11 @@ def get_user_playlists():
 
         while data["next"]:
             response = requests.get(data["next"], headers=headers)
-            data = response.json()
-            playlists.extend(data["items"])
+            if response.status_code == 200:
+                data = response.json()
+                playlists.extend(data["items"])
+            else:
+                print(f"Error fetching next page: {response.status_code}, {response.json()}")
         
         return playlists
     else:
@@ -99,8 +102,12 @@ def get_playlist_tracks(playlist_id):
 
         while data["next"]:
             response = requests.get(data["next"], headers=headers)
-            data = response.json()
-            tracks.extend(data["items"])
+            if response.status_code == 200:       
+                data = response.json()
+                tracks.extend(data["items"])
+            else:
+                print(f"Error fetching next page: {response.status_code}, {response.json()}")
+                break
 
         return tracks
     else:
