@@ -33,7 +33,7 @@ Edit the `.env` file and replace your_client_id and your_client_secret with your
 Run `playlist_sequencer.py`, provide authorization with your Spotify credentials, and enter your Spotify username and the name of your desired playlist!
 
 ---
-### Subplaylist Maker
+### Subplaylist Maker / Playlist Filter
 ---
 Spotify Subplaylist Maker is a Python script that takes a playlist link or user's liked songs and creates a filtered clone based on audio feature factors decided by the user (e.g. keeping songs that have high energy, high danceability, moderate loudness, and are in C major).
 
