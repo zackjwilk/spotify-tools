@@ -33,7 +33,7 @@ ranges = {
     }
 
 adjectives = {
-    "energy": ["lazy", "medium energy", "energetic"],
+    "energy": ["chill", "medium energy", "energetic"],
     "danceability": ["undanceable", "potentially danceable", "danceable"],
     "valence": ["sad", "neutral", "jubilant"],
     "loudness": ["quiet", "moderate volume", "loud"],
