@@ -15,7 +15,7 @@ factors = {
 # ^ Spotify audio features
 # None = ignore
 # 1 = low
-# 2 = neutral
+# 2 = moderate
 # 3 = high
 # time signature -> 3-7; 3 = 3/4, 4 = 4/4, etc.
 # key -> Pitch Class notation: 0 = C, 1 = C#, 2 = D, etc.
