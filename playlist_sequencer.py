@@ -3,6 +3,7 @@ sequence_basis = "energy"
 # ^ Spotify audio feature (energy, danceability, valence, tempo, loudness,
 # key, acousticness, instrumentalness, speechiness, liveness, time_signature,
 # duration_ms, mode)
+# TIME_SIGNATURE PROBABLY DOESN'T WORK, SPOTIFY'S API IS BEING WEIRD
 sequence_mode = "symmetrical"
 # ^ symmetrical, increasing, or decreasing
 
