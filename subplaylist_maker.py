@@ -1,47 +1,45 @@
 # EDIT THESE
 factors = {
-    "energy": 3,
-    "danceability": None,
-    "valence": None,
-    "loudness": None,
-    "acousticness": None,
-    "instrumentalness": None,
-    "speechiness": None,
-    "liveness": None,
-    "mode": None,
+    "energy": 3, # from 1-3
+    "danceability": 2, # 1 or 2 (undanceable/danceable)
+    "valence": 3, # from 1-3
+    "loudness": None, # from 1-3
+    "acousticness": None, # 1 or 2 (acoustic/not acoustic)
+    "instrumentalness": None, # 1 or 2 (instrumental/vocal)
+    "speechiness": None, # from 1-3
+    "liveness": None, # 1 or 2 (studio/live)
+    "mode": None, # 1 or 2 (minor/major)
     "time_signature": None, # PROBABLY DOESN'T WORK, SPOTIFY'S API IS BEING WEIRD
-    "key": None,
+    "key": None, # 0-11 (Pitch Class notation: 0 = C, 1 = C#, 2 = D, etc.)
     }
 # ^ Spotify audio features
 # None = ignore
 # 1 = low
 # 2 = moderate
 # 3 = high
-# time signature -> 3-7; 3 = 3/4, 4 = 4/4, etc.
-# key -> Pitch Class notation: 0 = C, 1 = C#, 2 = D, etc.
-# mode -> 0 = minor, 1 = major
+# time signature (if it works) -> 3 = 3/4, 4 = 4/4, etc.
 
 ranges = {
     "energy": [[0, 0.4], [0.4, 0.7], [0.7, 1.1]],
-    "danceability": [[0, 0.4], [0.4, 0.7], [0.7, 1.1]],
+    "danceability": [[0, 0.5], [0.5, 1.1]],
     "valence": [[0, 0.4], [0.4, 0.6], [0.6, 1.1]],
     "loudness": [[-60, -30], [-30, -16], [-16, 1]],
-    "acousticness": [[0, 0.4], [0.4, 0.7], [0.7, 1.1]],
+    "acousticness": [[0, 0.6], [0.6, 1.1]],
     "instrumentalness": [[0, 0.3], [0.3, 0.7], [0.7, 1.1]],
     "speechiness": [[0, 0.3], [0.3, 0.7], [0.7, 1.1]],
-    "liveness": [[0, 0.4], [0.4, 0.8], [0.8, 1.1]]
+    "liveness": [[0, 0.8], [0.8, 1.1]]
     }
 
 adjectives = {
     "energy": ["chill", "medium energy", "energetic"],
-    "danceability": ["undanceable", "potentially danceable", "danceable"],
+    "danceability": ["undanceable", "danceable"],
     "valence": ["sad", "neutral", "jubilant"],
     "loudness": ["quiet", "moderate volume", "loud"],
-    "acousticness": ["probably not acoustic", "potentially acoustic", "acoustic"],
-    "instrumentalness": ["vocal", "kinda instrumental", "instrumental"],
+    "acousticness": ["probably not acoustic", "acoustic"],
+    "instrumentalness": ["vocal", "instrumental"],
     "speechiness": ["no talking", "speechy", "spoken word"],
-    "liveness": ["studio", "potentially live", "live"],
-    "mode": ["major", "minor"], # order reversed cause adjective is retrieved using index factors[key]-1
+    "liveness": ["studio recorded", "live"],
+    "mode": ["minor", "major"],
     #"time_signature": ["3/4", "4/4", "5/4", "6/4", "7/4"],
     "key": ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
     }
@@ -286,12 +284,15 @@ if ((P_or_L == "P" and playlist) or P_or_L == "L"):
                 for key in factors.keys():
                     if factors[key] is not None:
                         if key in ["mode", "time_signature", "key"]:
-                            if feature[key] != factors[key]:
+                            val = feature[key]
+                            if key == "mode":
+                                val += 1
+                            if val != factors[key]:
                                 good = False
                         else:
                             val = feature[key]
                             good2 = False
-                            for j in range(3):
+                            for j in range(len(adjectives[key])):
                                 Range = ranges[key][j]
                                 if ((val >= Range[0] and val < Range[1]) and (factors[key] == j+1)):
                                     good2 = True
