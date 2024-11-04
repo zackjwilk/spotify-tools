@@ -2,7 +2,7 @@
 factors = {
     "energy": 3, # from 1-3
     "danceability": 2, # 1 or 2 (undanceable/danceable)
-    "valence": 3, # from 1-3
+    "valence": None, # from 1-3
     "loudness": None, # from 1-3
     "acousticness": None, # 1 or 2 (acoustic/not acoustic)
     "instrumentalness": None, # 1 or 2 (instrumental/vocal)
@@ -20,28 +20,28 @@ factors = {
 # time signature (if it works) -> 3 = 3/4, 4 = 4/4, etc.
 
 ranges = {
-    "energy": [[0, 0.4], [0.4, 0.7], [0.7, 1.1]],
-    "danceability": [[0, 0.5], [0.5, 1.1]],
-    "valence": [[0, 0.4], [0.4, 0.6], [0.6, 1.1]],
-    "loudness": [[-60, -30], [-30, -16], [-16, 1]],
-    "acousticness": [[0, 0.6], [0.6, 1.1]],
-    "instrumentalness": [[0, 0.3], [0.3, 0.7], [0.7, 1.1]],
-    "speechiness": [[0, 0.3], [0.3, 0.7], [0.7, 1.1]],
-    "liveness": [[0, 0.8], [0.8, 1.1]]
+    "energy": [(0, 0.4), (0.4, 0.7), (0.7, 1.1)],
+    "danceability": [(0, 0.5), (0.5, 1.1)],
+    "valence": [(0, 0.4), (0.4, 0.6), (0.6, 1.1)],
+    "loudness": [(-60, -30), (-30, -16), (-16, 1)],
+    "acousticness": [(0, 0.6), (0.6, 1.1)],
+    "instrumentalness": [(0, 0.3), (0.3, 0.7), (0.7, 1.1)],
+    "speechiness": [(0, 0.3), (0.3, 0.7), (0.7, 1.1)],
+    "liveness": [(0, 0.8), (0.8, 1.1)]
     }
 
 adjectives = {
-    "energy": ["chill", "medium energy", "energetic"],
-    "danceability": ["undanceable", "danceable"],
-    "valence": ["sad", "neutral", "jubilant"],
-    "loudness": ["quiet", "moderate volume", "loud"],
-    "acousticness": ["probably not acoustic", "acoustic"],
-    "instrumentalness": ["vocal", "instrumental"],
-    "speechiness": ["no talking", "speechy", "spoken word"],
-    "liveness": ["studio recorded", "live"],
-    "mode": ["minor", "major"],
-    #"time_signature": ["3/4", "4/4", "5/4", "6/4", "7/4"],
-    "key": ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+    "energy": ("chill", "medium energy", "energetic"),
+    "danceability": ("undanceable", "danceable"),
+    "valence": ("sad", "neutral", "jubilant"),
+    "loudness": ("quiet", "moderate volume", "loud"),
+    "acousticness": ("probably not acoustic", "acoustic"),
+    "instrumentalness": ("vocal", "instrumental"),
+    "speechiness": ("no talking", "speechy", "spoken word"),
+    "liveness": ("studio recorded", "live"),
+    "mode": ("minor", "major"),
+    #"time_signature": ("3/4", "4/4", "5/4", "6/4", "7/4"),
+    "key": ("C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B")
     }
 
 import json
