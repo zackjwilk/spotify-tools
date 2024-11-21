@@ -1,4 +1,4 @@
-# spotify-helper
+# spotify-tools
 ---
 ## Installation
 Clone the repository:
