@@ -59,7 +59,7 @@ load_dotenv()
 # CONSTANTS
 CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
 CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
-REDIRECT_URI = "https://myshetland.co.uk/shetland-ponies-in-sweaters/"
+REDIRECT_URI = "https://zackjwilk.github.io/"
 SCOPE = "playlist-read-private user-library-read playlist-modify-private playlist-modify-public"
 
 # Get authorization
