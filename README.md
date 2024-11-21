@@ -3,11 +3,11 @@
 ## Installation
 Clone the repository:
 
-`git clone https://github.com/zackjwilk/spotify-helper.git`
+`git clone https://github.com/zackjwilk/spotify-tools.git`
 
 Install dependencies with pip:
 
-`pip install -r spotify-helper/requirements.txt`
+`pip install -r spotify-tools/requirements.txt`
 
 ## Features
 ---
