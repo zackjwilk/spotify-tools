@@ -57,8 +57,8 @@ print("Welcome to Spotify Subplaylist Maker!\n")
 load_dotenv()
 
 # CONSTANTS
-CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
-CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
+CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
+CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
 REDIRECT_URI = "https://zackjwilk.github.io/"
 SCOPE = "playlist-read-private user-library-read playlist-modify-private playlist-modify-public"
 
@@ -195,7 +195,7 @@ def create_playlist(name):
 
     if response.status_code == 201:
         playlist_info = response.json()
-        print(f"New playlist created successfully; Playlist ID: {playlist_info['id']}")
+        print(f"New playlist created successfully; Playlist ID: {playlist_info["id"]}")
         return playlist_info["id"]
     else:
         print(f"Error creating playlist: {response.json()}")
@@ -226,7 +226,7 @@ def get_audio_features(track_ids):
     url = f"https://api.spotify.com/v1/audio-features"
 
     params = {
-        "ids": ','.join(track_ids)  # Join track IDs into a comma-separated string
+        "ids": ",".join(track_ids)  # Join track IDs into a comma-separated string
     }
 
     response = requests.get(url, headers=headers, params=params)
