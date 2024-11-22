@@ -1,4 +1,4 @@
-# spotify-tools
+# spoti-tools
 ---
 ## Installation
 Clone the repository:
